@@ -1,0 +1,1 @@
+{"Value for money": "5", "month": "July 2014", "Recommended": "yes", "Seat Comfort": "4", "Rating": "10", "Staff Service": "5", "Entertainment": "4", "Catering": "4", "reviews": "Jakarta - Singapore - Milan, July 9-10. Everything fine, cabin crew excellent as always. Still my favourite airline.", "air_title": "Singapore Airlines ", "Customer_name": "D Roberto"}

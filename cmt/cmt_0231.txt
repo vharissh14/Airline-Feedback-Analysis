@@ -1,0 +1,1 @@
+{"Value for money": "4", "month": "August 2014", "Recommended": "yes", "Seat Comfort": "4", "Rating": "8", "Staff Service": "5", "Entertainment": "4", "Catering": "4", "reviews": "SQ947 and SQ378, Aug 19, 2014. DPS-SIN and SIN-MXP. Nice flights, attendants were perfect, meal ok, too many uninteresting movies.", "air_title": "Singapore Airlines ", "Customer_name": "A Abbado"}

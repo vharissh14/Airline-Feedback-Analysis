@@ -1,0 +1,90 @@
+from nltk import stem
+from nltk import word_tokenize
+import re
+import nltk
+pos_lis=[]
+neg_lis=[]
+
+def extract_features(review):   #for finding the Relevant Features. Returns what words are contained in the input passed.
+    review_words = set(review)  #presence or absence of a word is the feature.
+    features = {}
+    for word in featureList:
+        features['contains(%s)' % word] = (word in review_words)
+    return features
+
+def replaceTwoOrMore(s):    
+    pattern = re.compile(r"(.)\1{1,}", re.DOTALL)
+    return pattern.sub(r"\1\1", s)
+
+def getStopWordList(stopWordListFileName):  #removing extremely common words which would appear to be of little importance. Eg. 'a','be','is' etc.
+    stopWords = []
+    fp = open(stopWordListFileName, 'r')
+    line = fp.readline()
+    while line:
+        word = line.strip()
+        stopWords.append(word)
+        line = fp.readline()
+    fp.close()
+    return stopWords
+
+def getFeatureVector(review):   #model from which classifier can learn
+    featureVector = []
+    words = nltk.word_tokenize(review)
+    for w in words:
+        w = replaceTwoOrMore(w)
+        w = w.strip('\'"?,.')
+        val = re.search(r"^[a-zA-Z][a-zA-Z0-9]*$", w)
+        if(w in stopWords or val is None):
+            continue
+        else:
+            featureVector.append(str(w.lower()))
+    return featureVector
+
+def processReview(review):  #pre-processing the reviews
+    review = review.lower()
+    review = re.sub('((www\.[^\s]+)|(https?://[^\s]+))','URL',review)
+    review = re.sub('@[^\s]+','AT_USER',review)
+    review = re.sub('[\s]+', ' ', review)
+    review = re.sub(r'#([^\s]+)', r'\1', review)
+    review = review.strip('\'"')
+    return review
+
+def stemming_text_1():
+    with open('pos.txt', 'r') as f:
+        for line in f:
+        	line1=line.decode('utf-8')
+            print line1
+        	processedTweet = processReview(line1)
+        	featureVector = getFeatureVector(processedTweet)
+        	pos_lis.append(featureVector)
+
+def stemming_text_2():
+    with open('neg.txt', 'r') as f:
+        for line in f:
+            line1=line.decode('utf-8')
+            processedTweet = processReview(line1)
+            featureVector = getFeatureVector(processedTweet)
+            neg_lis.append(featureVector)
+
+
+stopWords = getStopWordList('stopwords.txt')
+stemming_text_1()
+stemming_text_2()
+print len(pos_lis[0])
+print len(neg_lis[0])
+
+with open('negt.txt', 'ab+') as f:
+	for x in range(len(neg_lis[0])):
+		f.write(neg_lis[0][x])
+		f.write('\n')
+
+f.close()
+
+with open('post.txt', 'ab+') as f:
+    for x in range(len(pos_lis[0])):
+        f.write(pos_lis[0][x])
+        f.write('\n')
+
+f.close()
+
+

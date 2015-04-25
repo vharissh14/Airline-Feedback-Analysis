@@ -1,0 +1,1 @@
+{"Value for money": "5", "month": "December 2014", "Recommended": "yes", "Seat Comfort": "5", "Rating": "10", "Staff Service": "5", "Entertainment": "1", "Catering": "5", "reviews": "LHR-BGO on A319. Flight on time and only half full. Drinks and snack on this early departure. Crew very good.", "air_title": "British Airways ", "Customer_name": "Colin Pay"}

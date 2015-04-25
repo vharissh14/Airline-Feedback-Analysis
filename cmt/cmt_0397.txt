@@ -1,0 +1,1 @@
+{"Value for money": "5", "month": "August 2014", "Recommended": "yes", "Seat Comfort": "5", "Rating": "10", "Staff Service": "3", "Entertainment": "3", "Catering": "5", "reviews": "I flew DMK (Don Muang) - SIN (Changi) many months ago. Very good Low-Cost Airline. Recommend for the Low-Cost Ticket.", "air_title": "AirAsia ", "Customer_name": "Iracha Tantiwongchaichan"}

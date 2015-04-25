@@ -1,0 +1,1 @@
+{"Value for money": "4", "month": "August 2014", "Recommended": "yes", "Seat Comfort": "3", "Rating": "9", "Staff Service": "5", "Entertainment": "4", "Catering": "5", "reviews": "Air France flight JFK-CDG on 22nd Aug 2014 was excellent. Very good, courteous and enthusiastic cabin crew and good food and wine.", "air_title": "Air France ", "Customer_name": "J Wijit"}
